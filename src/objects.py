@@ -71,3 +71,6 @@ class Game:
             hand1 = not hand1
 
         print("Finished dealing")
+
+    def in_progress(self):
+        return self.hand1.get_length() and self.hand2.get_length()

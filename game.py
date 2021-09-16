@@ -51,7 +51,8 @@ game = Game()
 game.deal()
 
 
-for i in range(20):
+while game.in_progress():
     playTurn(game)
+
 
 print(game.hand1.cards.__len__())
