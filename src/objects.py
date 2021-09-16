@@ -46,8 +46,8 @@ class Hand:
     def draw(self):
         return self.cards.pop()
 
-    def pick_up(self, card: Card):
-        self.cards.appendleft(card)
+    def pick_up_cards(self, cards: deque):
+        self.cards.extendleft(cards)
 
 
 class Game:
@@ -64,9 +64,9 @@ class Game:
             card = self.deck.take_one()
 
             if hand1:
-                self.hand1.pick_up(card)
+                self.hand1.pick_up_cards(deque([card]))
             else:
-                self.hand2.pick_up(card)
+                self.hand2.pick_up_cards(deque([card]))
 
             hand1 = not hand1
 
